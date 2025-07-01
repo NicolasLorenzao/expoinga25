@@ -18,3 +18,7 @@ function resetarAcessibilidade() {
   document.body.style.fontSize = "100%";
   document.body.classList.remove("alto-contraste");
 }
+document.getElementById("acessibilidade-toggle").addEventListener("click", () => {
+  const menu = document.getElementById("acessibilidade-menu");
+  menu.hidden = !menu.hidden;
+});

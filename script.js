@@ -1,17 +1,20 @@
-const texto = document.getElementById('texto');
-const aumentarTexto = document.getElementById('aumentarTexto');
-const diminuirTexto = document.getElementById('diminuirTexto');
+let tamanhoFonte = 100; // porcentagem padrão
 
-let tamanhoFonte = 16;
-
-aumentarTexto.addEventListener('click', () => {
-  tamanhoFonte += 2;
-  texto.style.fontSize = `${tamanhoFonte}px`;
-});
-
-diminuirTexto.addEventListener('click', () => {
-  if (tamanhoFonte > 10) {
-    tamanhoFonte -= 2;
-    texto.style.fontSize = `${tamanhoFonte}px`;
+function aumentarFonte() {
+  if (tamanhoFonte < 150) {
+    tamanhoFonte += 10;
+    document.body.style.fontSize = `${tamanhoFonte}%`;
   }
-});
+}
+
+function diminuirFonte() {
+  if (tamanhoFonte > 70) {
+    tamanhoFonte -= 10;
+    document.body.style.fontSize = `${tamanhoFonte}%`;
+  }
+}
+function resetarAcessibilidade() {
+  tamanhoFonte = 100;
+  document.body.style.fontSize = "100%";
+  document.body.classList.remove("alto-contraste");
+}
